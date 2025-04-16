@@ -1,21 +1,11 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// 👇 ESTA PARTE es la clave
 export default defineConfig({
   plugins: [react()],
   server: {
     port: 5173,
-    open: true,
-    // 👇 Esto redirige todas las rutas al index.html
-    fs: {
-      allow: ['.']
-    }
+    open: true, // Abre el navegador automáticamente
   },
-  // 👇 Esto es fundamental para que las rutas internas funcionen
-  build: {
-    rollupOptions: {
-      input: 'index.html'
-    }
-  }
+  base: './', // Utiliza rutas relativas
 })

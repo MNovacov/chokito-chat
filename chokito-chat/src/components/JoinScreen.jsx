@@ -9,8 +9,8 @@ export default function JoinScreen({ palettes, setColorPalette }) {
 
   const handleJoin = () => {
     if (!username.trim()) return alert('¡Necesitas un nombre!')
-    navigate(`/${roomId.trim() || generateRandomId()}`, {
-      state: { username: username.trim() }
+    navigate(`/${roomId.trim() || generateRandomId()}`, { 
+      state: { username: username.trim() } 
     })
   }
 
@@ -26,13 +26,6 @@ export default function JoinScreen({ palettes, setColorPalette }) {
         placeholder="Tu nombre"
         value={username}
         onChange={(e) => setUsername(e.target.value)}
-        className="pixel-input"
-      />
-      <input
-        type="text"
-        placeholder="ID de sala (opcional)"
-        value={roomId}
-        onChange={(e) => setRoomId(e.target.value)}
         className="pixel-input"
       />
       <button onClick={handleJoin} className="pixel-button">
